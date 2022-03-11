@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>
+		aaa
+	</title>
+</head>
+<body>
+	
+<script>
+	function calc(str){
+	/*
+	          DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+	                  Version 2, December 2004
+	 Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+	 Everyone is permitted to copy and distribute verbatim or modified
+	 copies of this license document, and changing it is allowed as long
+	 as the name is changed.
+	            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+	   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+	  0. You just DO WHAT THE FUCK YOU WANT TO.
+	*/
+
+		var coeff = [7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2,1];
+		var suffix = ['1','0','x','9','8','7','6','5','4','3','2'];
+		var sum = 0;
+		for(var i=0;i<17;i++)
+			sum += coeff[i] * parseInt(str.charCodeAt(i)-48);
+		sum %= 11;
+		str = str.substr(0,17) + suffix[sum];
+		return str;
+	}
+</script>
+
+<button onclick="alert(calc(prompt('请输入待计算的身份证号（前17位）')))" >计算</button>
+
+
+</body>
+</html>
